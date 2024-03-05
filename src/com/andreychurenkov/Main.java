@@ -14,7 +14,7 @@ public class Main {
 
     private static void printCities(List<City> cities) {
         for (City city : cities) {
-            System.out.println(city + "\n");
+            System.out.println(city);
         }
     }
 }
