@@ -54,4 +54,15 @@ public class City {
     public void setFoundation(String foundation) {
         this.foundation = foundation;
     }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "name='" + name + '\'' +
+                ", region='" + region + '\'' +
+                ", district='" + district + '\'' +
+                ", population=" + population +
+                ", foundation='" + foundation + '\'' +
+                '}';
+    }
 }
