@@ -4,9 +4,7 @@ import com.andreychurenkov.model.City;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class CitiesUtil {
     public static List<City> parseCitiesFromFile() {
@@ -22,6 +20,21 @@ public class CitiesUtil {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
+        return cities;
+    }
+
+    public static List<City> sortByName(List<City> cities) {
+        cities.sort(Comparator.comparing(City::getName, String.CASE_INSENSITIVE_ORDER));
+
+        return cities;
+    }
+
+    public static List<City> sortByFederalDistrictAndName(List<City> cities) {
+        Comparator<City> byFederalDistrict = Comparator.comparing(City::getDistrict);
+        Comparator<City> byName = Comparator.comparing(City::getName);
+
+        cities.sort(byFederalDistrict.thenComparing(byName));
 
         return cities;
     }
