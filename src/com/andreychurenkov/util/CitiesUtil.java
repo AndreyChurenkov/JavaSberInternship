@@ -38,4 +38,20 @@ public class CitiesUtil {
 
         return cities;
     }
+
+    public static int[][] convertToIndexPopulationArray(List<City> cities) {
+        // Создаем массив для хранения индекса города и числа жителей
+        int[][] indexPopulationArray = new int[cities.size()][2];
+
+        // Заполняем массив
+        for (int i = 0; i < cities.size(); i++) {
+            indexPopulationArray[i][0] = i; // Индекс города
+            indexPopulationArray[i][1] = cities.get(i).getPopulation(); // Количество жителей
+        }
+
+        // Сортируем массив по количеству жителей по убыванию
+        Arrays.sort(indexPopulationArray, (a, b) -> Integer.compare(b[1], a[1]));
+
+        return indexPopulationArray;
+    }
 }
