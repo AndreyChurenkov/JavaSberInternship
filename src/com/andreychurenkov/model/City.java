@@ -1,11 +1,11 @@
 package com.andreychurenkov.model;
 
 public class City {
-    String name;
-    String region;
-    String district;
-    int population;
-    String foundation;
+    private String name;
+    private String region;
+    private String district;
+    private int population;
+    private String foundation;
 
     public City(String name, String region, String district, int population, String foundation) {
         this.name = name;
