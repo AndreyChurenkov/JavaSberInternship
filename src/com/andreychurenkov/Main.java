@@ -5,6 +5,7 @@ import com.andreychurenkov.util.CitiesUtil;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
 
@@ -36,6 +37,11 @@ public class Main {
         */
         printCitiesArray(CitiesUtil.convertToIndexPopulationArray(cities));
 
+        /*
+        Определяем количества городов в разрезе регионов
+        */
+        printRegionCityCount(CitiesUtil.countCitiesByRegion(cities));
+
     }
 
     private static void printCitiesList(List<City> cities) {
@@ -47,6 +53,12 @@ public class Main {
     private static void printCitiesArray(int[][] indexPopulationArray) {
         for (int[] pair : indexPopulationArray) {
             System.out.println("[" + pair[0] + "] = " + pair[1]);
+        }
+    }
+
+    public static void printRegionCityCount(Map<String, Integer> regionCityCount) {
+        for (Map.Entry<String, Integer> entry : regionCityCount.entrySet()) {
+            System.out.println(entry.getKey() + " - " + entry.getValue());
         }
     }
 }
