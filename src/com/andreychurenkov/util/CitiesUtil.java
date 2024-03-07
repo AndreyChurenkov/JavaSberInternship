@@ -54,4 +54,18 @@ public class CitiesUtil {
 
         return indexPopulationArray;
     }
+
+
+
+    public static Map<String, Integer> countCitiesByRegion(List<City> cities) {
+        Map<String, Integer> regionCityCount = new HashMap<>();
+
+        // Считаем количество городов в каждом регионе
+        for (City city : cities) {
+            String region = city.getRegion();
+            regionCityCount.put(region, regionCityCount.getOrDefault(region, 0) + 1);
+        }
+
+        return regionCityCount;
+    }
 }
